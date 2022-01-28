@@ -8,7 +8,7 @@ char *draw;
 char bg, f_bg, mod;
 float x, y, radius;
 
-int		check_pixel(int i, int j)
+int		check_pixel(float i, float j)
 {
 	float dist = sqrtf((i - x) * (i - x) + (j - y) * (j - y));
 
