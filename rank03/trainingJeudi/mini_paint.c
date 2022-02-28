@@ -15,8 +15,8 @@ int		check_pixel(float i, float j)
 	if (dist <= radius)
 	{
 		if (radius - dist < 1)
-			return (2);
-		return (1);
+			return (1);
+		return (2);
 	}
 	return (0);
 }
