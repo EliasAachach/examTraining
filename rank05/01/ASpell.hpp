@@ -2,29 +2,33 @@
 # define ASPELL_HPP
 
 # include <iostream>
+# include "ATarget.hpp"
 
-class ASpell:
+class ATarget;
+
+class ASpell
 {
 	protected:
-	std::string	name;
-	std::string	effects;
+		std::string	_name;
+		std::string	_effects;
 
 	public:
-
-	/*		Constructors	*/
+	//constructors
 	ASpell();
+	ASpell(const ASpell &src);
 	ASpell(std::string name, std::string effects);
-	ASpell(const ASpell	&src);
-	~ASpell();
-	
-	/*		Overload	*/
-	ASpell	&operator=(const ASpell &rhs);
-	
-	/*		Accessors	*/
-	std::string	getName();
-	std::string	getEffects();
+	virtual	~ASpell();
 
-	/*		Methods		*/
+	//overloads
+	ASpell	&operator=(const ASpell &rhs);
+
+	//accessors
+	const std::string	&getName() const;
+	const std::string	&getEffects() const;
+
+	//methods
+	virtual ASpell	*clone() const = 0;
+	void			launch(const ATarget &target);
 
 };
 

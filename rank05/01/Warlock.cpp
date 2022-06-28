@@ -1,6 +1,6 @@
 #include "Warlock.hpp"
 
-	/*CONSTRUCTORS*/
+	/*	CONSTRUCTORS	*/
 
 Warlock::Warlock(std::string name, std::string title) : _name(name), _title(title)
 {
@@ -28,7 +28,14 @@ void	Warlock::setTitle(const std::string &newTitle)
 	this->_title = newTitle;
 }
 
+	/*	METHODS	*/
+
 void	Warlock::introduce() const
 {
 	std::cout << this->_name << ": I am " << this->_name << ", " << this->_title << "!" << std::endl;
+}
+
+void	Warlock::learnSpell(ASpell *toLearn)
+{
+	this->_spellList.push_back(toLearn->clone());
 }
